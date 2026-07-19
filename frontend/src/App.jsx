@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import ReactMarkdown from "react-markdown";
 import Header from "./components/Header";
+const API = import.meta.env.VITE_API_URL;
 
 function App() {
   const [question, setQuestion] = useState("");
@@ -27,10 +28,7 @@ const chatEndRef = useRef(null);
     try {
       setUploadStatus("Uploading...");
 
-      const res = await axios.post(
-        "http://localhost:5000/api/upload",
-        formData
-      );
+      const res = await axios.post(`${API}/api/upload`, formData);
 
       setUploadStatus(
         `✅ ${res.data.originalName} uploaded successfully`
@@ -45,9 +43,7 @@ const chatEndRef = useRef(null);
   try {
     setAnalyzing(true);
 
-    const res = await axios.post(
-      "http://localhost:5000/api/analyze"
-    );
+    const res = await axios.post(`${API}/api/upload`, formData);
 
     setAnalysis(res.data.analysis);
 
@@ -80,12 +76,9 @@ const chatEndRef = useRef(null);
     setLoading(true);
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/chat",
-        {
-          message: userQuestion,
-        }
-      );
+      const res = await axios.post(`${API}/api/chat`, {
+  message: userQuestion,
+});
 
       setMessages((prev) => [
         ...prev,
