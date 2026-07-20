@@ -81,7 +81,9 @@ FactoryMindAI/
 5. User can ask questions about the uploaded document.
 6. AI retrieves relevant context and generates accurate answers.
 
-
+![
+    
+](<ChatGPT Image Jul 20, 2026, 10_29_59 AM.png>)
 ---
 
 ## 👥 Team
@@ -96,3 +98,4 @@ FactoryMindAI/
 ## 📜 License
 
 Academic Prototype for ET AI Hackathon 2026.
+
