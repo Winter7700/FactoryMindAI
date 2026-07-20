@@ -39,21 +39,19 @@ const chatEndRef = useRef(null);
     }
   };
 
-  const analyzeDocument = async () => {
+ const analyzeDocument = async () => {
   try {
     setAnalyzing(true);
 
-    const res = await axios.post(`${API}/api/upload`, formData);
+    const res = await axios.post(`${API}/api/analyze`);
 
     setAnalysis(res.data.analysis);
 
   } catch (err) {
-
     setAnalysis(
       err.response?.data?.message ||
       "Analysis failed."
     );
-
   } finally {
     setAnalyzing(false);
   }
