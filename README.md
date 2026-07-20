@@ -81,10 +81,11 @@ FactoryMindAI/
 5. User can ask questions about the uploaded document.
 6. AI retrieves relevant context and generates accurate answers.
 
-![
-    
-](<ChatGPT Image Jul 20, 2026, 10_29_59 AM.png>)
----
+## 🏗 System Architecture
+
+![FactoryMind AI Architecture](docs/architecture.png)
+
+The system follows a cloud-based architecture where users upload industrial PDF documents through the React frontend hosted on Vercel. The backend, deployed on Render, extracts and processes document content, generates document summaries, and interacts with the OpenRouter LLM to provide contextual answers based on the uploaded document.
 
 ## 👥 Team
 
